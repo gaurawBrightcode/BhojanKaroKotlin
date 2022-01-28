@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+    tools:context=".ui.LoginActivity">
+    <RelativeLayout
+        android:id="@+id/fl_user_icon"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp">
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/serifbold"
+            android:padding="@dimen/_20sdp"
+            android:text="Login"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:lottie_autoPlay="true"
+            android:layout_below="@id/tv_login"
+            app:lottie_loop="true"
+            android:layout_centerHorizontal="true"
+            app:lottie_rawRes="@raw/login" />
+    </RelativeLayout>
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="@color/black"
+        app:cardElevation="@dimen/_10sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_below="@id/fl_user_icon"
+        app:cardUseCompatPadding="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_margin="@dimen/_20sdp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_border"
+                android:fontFamily="@font/serif"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:hint="Mobile No"
+                android:padding="13dp" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputPassword"
+                style="@style/parent"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/edit_text_border"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:passwordToggleTint="@color/teal_200"
+                app:passwordToggleEnabled="true">
+                <EditText
+                    android:importantForAutofill="no"
+                    android:id="@+id/et_password"
+                    style="@style/modifiedEditText"
+                    android:fontFamily="@font/serif"
+                    android:background="@drawable/edit_text_border"
+                    android:hint="Pin"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    app:passwordToggleEnabled="true" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <ProgressBar
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:id="@+id/pb_loader"
+                />
+            <com.skydoves.elasticviews.ElasticButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:id="@+id/btn_login"
+                android:layout_gravity="center"
+                android:background="@drawable/button_border"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="20dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/rl_go_to_signup"
+        android:padding="@dimen/_30sdp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_donaccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/serif"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="Don't have an account ?" />
+
+        <TextView
+            android:id="@+id/tv_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/tv_donaccount"
+            android:fontFamily="@font/serifbold"
+            android:gravity="center"
+            android:text="Sign-up"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+</RelativeLayout>
